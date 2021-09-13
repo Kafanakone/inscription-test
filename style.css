@@ -11,7 +11,6 @@ body{
     height: 90vh;
     margin:auto;
     margin-top: 2%;
-    overflow: hidden;
 }
 
 /* Left element */
@@ -65,14 +64,14 @@ legend{
     color: gray;
     margin-top: -4%;
     margin-left: 3%;
-    margin-bottom: 10%;
+    margin-bottom: 4%;
 
 }
 input[type="checkbox"]{
     display: inline;
     width: 5%;
-    margin-top: 5%;
-    margin-bottom: 15%;
+    margin-top: 2%;
+    margin-bottom: 5%;
 }
 .text-check{
     display: inline;
@@ -89,22 +88,22 @@ input[type="submit"]{
     text-transform: uppercase;
     padding: 4%;
     margin-top: 5%;
-    margin-bottom: 15%;
+    margin-bottom: 10%;
 }
 input[type="submit"]:hover{
     background-color: transparent;
     border: 1px #ff5160 solid ;
     color: #ff5160;
 }
-.rigth-conteneur img{
-    max-width: 90vw;
+.rigth-conteneur {
+    width: 50%;
+    background-image: url("images/img-right.png");
 }
-/* }
-@media(max-width: 1080px){
+
+@media(max-width: 600px){
     .content{
         flex-direction: column;
         overflow-y: auto;
-        overflow-x: hidden;
     }
     .icon-contact{
         position: relative;
@@ -115,4 +114,4 @@ input[type="submit"]:hover{
         margin-bottom: -8px;
         margin-left: 10px;
     }
-} */
+} 
