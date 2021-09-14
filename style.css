@@ -98,6 +98,8 @@ input[type="submit"]:hover{
 .rigth-conteneur {
     width: 50%;
     background-image: url("images/img-right.png");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 @media(max-width: 600px){
