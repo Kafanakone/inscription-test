@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
     <title>Inscription</title>
 </head>
 <body>
@@ -17,7 +20,10 @@
                 <legend>Nom Complet</legend>
                 <input type="text" placeholder="John Nash">
                 <input type="email" name="mail" id="mail" placeholder="Adresse e-mail">
-                <input type="password" name="password" id="password" placeholder="Mot de passe">
+                <div class="Motpass">
+                    <input type="password" name="motdepasse" id="motdepasse" placeholder="Mot de passe">
+                    <img src="images/oeil.png" alt="" class="cachemotpasse" id="img-oeil" onClick="EtatOeil()">
+                </div>
                 <p class="text-pass">Le mot de passe doit comporter entre 4 et 6 caractères </p>
                 <input type="password" name="password" id="password" placeholder="Confirmer le mot de passe">
                 <input type="checkbox" name="case" id="case"><p class="text-check"> J'ai accepté les <a href=""> Conditions générales</a></p>
@@ -28,5 +34,20 @@
             <!-- <img src="images/img-right.png" alt=""> -->
         </div>
     </div>
+    <script>
+        oeil=true;
+        function EtatOeil(){
+            if(oeil){
+                document.getElementById("motdepasse").setAttribute("type", "text");
+                document.getElementById("img-oeil").src="images/oeil-barre.png"; 
+                oeil=false;
+            }
+            else{
+                document.getElementById("motdepasse").setAttribute("type", "password");
+                document.getElementById("img-oeil").src="images/oeil.png";
+                oeil=true;
+            }
+        }
+    </script>
 </body>
 </html>
