@@ -113,7 +113,6 @@ input[type="submit"]:hover{
 
 }
 .Motpass:focus{
-    border: none;
     border-color: #ff5160;
 }
 .Motpass input{
@@ -136,20 +135,21 @@ input[type="submit"]:hover{
     background-repeat: no-repeat;
     background-size: cover;
 }
-/* 
+
 @media(max-width: 600px){
     .content{
         display: block;
-        /* flex-direction: column; */
-        /* overflow-y: none; 
     }
-    .icon-contact{
-        position: relative;
-    }
+    .rigth-conteneur {
+        width: 55vw;
+        height: 80vw;
+     }
     legend{
-        position: relative;
-        width: 110px;
-        margin-bottom: -8px;
-        margin-left: 10px;
+    font-size: 40%;
     }
-}  */ 
+    .cachemotpasse{
+        z-index: 99;
+        width: 12px;
+        height: 12px;
+    } 
+}
