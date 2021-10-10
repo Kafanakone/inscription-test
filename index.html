@@ -88,6 +88,8 @@
             </div>
         </div>
     </div>
+
+    <!-- Script yeux -->
     <script>
         oeil = true;
         oeil2 = true;
@@ -117,6 +119,9 @@
             }
         }
     </script>
+
+    <!-- Script Validation du formulaire -->
+
     <script>
         var nom = document.getElementById("name");
         var mail = document.getElementById("mail");
@@ -133,15 +138,15 @@
             if (nom.value !="" && mail.value != "" && password.value !="" && passwordConfirm.value !="" ) {
                 // verifie nom
                 if (nom.value.length < 4 ) {
-                    document.getElementById("nomcorrect").innerHTML = "Le nom est incorrect";
+                    document.getElementById("nomincorrect").innerHTML = "Le nom doit être supérieur à 4 caractères";
                 
                 }else{
                     tnom = "true";
                 }
 
                 // Verifie mot de passe
-                if (password.value.length < 4 && password.value.length >6 ) {
-                    document.getElementById("motpassincorrect").innerHTML = "Le mot de passe doit être d'au moins 4 caractères et inférieur à 6 caractères"
+                if (password.value.length < 4 || password.value.length > 6 ) {
+                    document.getElementById("motpassincorrect").innerHTML = "Le mot de passe doit être d'au moins 4 caractères et inférieur à 7 caractères"
                 }else{
                     tpass = "true";
                 }
