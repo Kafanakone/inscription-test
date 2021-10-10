@@ -126,30 +126,31 @@
         // var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
         
         function Validation() {
-            
+            var tnom;
+            var tpass;
+            var tpassconf;
+            var tmail;
             if (nom.value !="" && mail.value != "" && password.value !="" && passwordConfirm.value !="" ) {
                 // verifie nom
-                if (nom.value.length >= 4 ) {
-                    document.getElementById("nomcorrect").innerHTML = "Le nom est correct";
+                if (nom.value.length < 4 ) {
+                    document.getElementById("nomcorrect").innerHTML = "Le nom est incorrect";
                 
                 }else{
-                    document.getElementById("nomincorrect").innerHTML = "Le nom doit être superieur à 4 caractères ";
+                    tnom = "true";
                 }
 
                 // Verifie mot de passe
                 if (password.value.length < 4 && password.value.length >6 ) {
                     document.getElementById("motpassincorrect").innerHTML = "Le mot de passe doit être d'au moins 4 caractères et inférieur à 6 caractères"
                 }else{
-                    document.getElementById("motpasscorrect").innerHTML = "Le mot de passe est correct"
-
+                    tpass = "true";
                 }
 
                 // verifie mot de passe confirm
-                if (password.value == passwordConfirm.value ) {
-                    document.getElementById("motpassconfirmcorrect").innerHTML = "Les deux mots de passe sont identiques"
+                if (password.value != passwordConfirm.value ) {
+                    document.getElementById("motpassconfirmincorrect").innerHTML = "Ce mot de passe ne correspond pas à celui que vous avez précedent entré"
                 }else{
-                    document.getElementById("motpassconfirmincorrect").innerHTML = "Ce mot de passe ne correct pas à celui que vous avez précedent entré"
-
+                    tpassconf = "true";
                 }
 
 
@@ -160,19 +161,15 @@
                     mail.value.match("@ymail")
                 ) {
 
-                    document.getElementById("mailcorrect").innerHTML = "le mail est correct";
+                    console.log(document.getElementById("mailcorrect"));
+                    tmail = "true";
 
                 }else{
                     document.getElementById("mailincorrect").innerHTML = "le format du mail est incorrect";
                 }
 
                 // Message Success
-                if (
-                    (document.getElementById("nomcorrect").value = "Le nom est correct") &&
-                    (document.getElementById("motpasscorrect").value = "Le mot de passe est correct") &&
-                    (document.getElementById("motpassconfirmcorrect").value = "Les deux mots de passe sont identiques") &&
-                    (document.getElementById("mailcorrect").value = "le mail est correct")
-                ) {
+                if (tnom == "true" && tmail == "true" && tpass == "true" && tpassconf == "true") {
                     // alert("Vous êtes bien inscrit, bienvenue !")
                     document.getElementById("success").innerHTML = 
                     "<div class='alert alert-success alert-dismissible fade show' role='alert'>" +
